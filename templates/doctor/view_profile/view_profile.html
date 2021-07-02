@@ -102,7 +102,21 @@
 
 </div>
 
+<div class="form-row field-img">
 
+
+    <div>
+        
+        
+            <label for="id_img">Img:</label>
+            
+                <input type="file" name="img" accept="image/*" id="id_img">
+            
+        
+        
+    </div>
+
+</div>
 
 <div class="form-row field-address">
 
@@ -228,7 +242,21 @@
     </div>
 
 </div>
+<div class="form-row field-rating">
 
+
+        <div>
+            
+            
+                <label class="required" for="id_specialization">Rating:</label>
+                
+                    <input type="text" name="Rating" value={{duser.doctor.rating}}/5 class="vTextField" maxlength="30" required="" id="id_Rating">
+                
+            
+            
+        </div>
+    
+</div>
 
 {% if request.user.doctor %}
 
@@ -252,8 +280,39 @@
 </fieldset>
 
 
+<div class="container">
+        
+    <br>   
+<h2>Ratings and Reviews</h2>
+<br>
+        <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>Patient name</th>
+                    <th>Ratings</th>
+                    <th>Reviews</th>
+                  </tr>
+                </thead>
+                <tbody>
+                        {% for i in rate %}
+               <tr>
+                    <td>{{i.patient.name}}</td>
+                    <td>{{i.rating}}/5</td>
+                    <td>{{i.review}}</td>
+               </tr>
+                 
+     {% endfor %}
+                </tbody>
+              </table>
+</div>
 
 
+    </div>
+
+ </div>
+    <!-- END Content -->
+
+</div>
 <!-- END Container -->
 
 

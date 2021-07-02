@@ -95,10 +95,10 @@ $("#predict").click(function () {
   
 
 
-  /*$("#resultdiv").show("slow");
+  $("#resultdiv").show("slow");
   $('html,body').animate({
     scrollTop: $("#resultdiv").offset().top},
-    'slow');*/
+    'slow');
        
 
 
@@ -262,7 +262,35 @@ $("#predict").click(function () {
 
   <br>
 
- 
+  <div id="resultdiv" style="display: none;" >
+        <div class="text-center">
+              <div class="card" id="predicted-data">
+                    <div>
+                            <span class="diseasefield" >Patient name : {{ user.patient.name }}</span>
+                            <span class="diseasefield" >&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Age : {{ user.patient.age }} </span>
+                    </div>
+                    <span class="diseasefield" >predicted disease is : </span><span class="diseasefield" id="diseasefield" style="color: #092700; text-shadow: 2px 2px 4px rgb(36, 255, 45);"></span> <br>
+                    <br>
+                    <span class="diseasefield">confidence score of :  </span>
+                    <span>
+                          <div class="progress" style="display: inline-block;width:140px">
+                              <div id="percentage" class="progress-bar" style="width: 0%">0%
+                              </div>
+                          </div>
+                    </span>
+
+                    </div>
+              </div>
+
+        <div class="text-center mt-4 mb-4"> 
+              <button class="btn btn-outline-success">
+                    <a id="href" href="https://www.google.com/search?q=anuj" target="_blank" rel="noopener noreferrer">Click here to know more about &nbsp 
+                    <span id="diseasesearch" style="color: crimson;"></span></a>
+              </button>
+        </div>
+          <br><br>
+
+        <div class="text-center">
           <h4>This tool does not provide medical advice. It is intended for informational purposes only.
           </h4><h4>It is not a substitute for professional medical advice, diagnosis or treatment. 
           </h4>

@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     #user apps
     'accounts.apps.AccountsConfig',
     'main_app.apps.MainAppConfig',
+    'chats.apps.ChatsConfig',
     #system apps
     'django.contrib.admin',
     'django.contrib.auth',
